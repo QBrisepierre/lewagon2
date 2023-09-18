@@ -8,6 +8,8 @@ import runChallenges from "../spec/select_examiner.js";
 
 const franceElement = () => {
   // TODO 2: select the France list item and return it!
+  const france = document.getElementById('france');
+  return france;
 };
 
 // Checking exercise answers. DO NOT MODIFY THIS LINE
