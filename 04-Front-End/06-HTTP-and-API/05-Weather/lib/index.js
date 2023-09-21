@@ -3,6 +3,7 @@ const description = document.getElementById("description");
 const temperature = document.getElementById("temperature");
 const city = document.getElementById("city");
 const icon = document.getElementById("icon");
+const input = document.getElementById('input');
 // TODO: Call the Weather API when the form is submitted
 
 const buildUrl = (location) => {
@@ -10,15 +11,15 @@ const buildUrl = (location) => {
   return url;
 };
 
+// TODO: Create a function to get the weather info
 const insertData = (data) => {
   const iconId = data.weather[0].icon;
   icon.src = `https://openweathermap.org/img/w/${iconId}.png`;
-  description.innerText = data.weather[0].description;
   temperature.innerText = `${data.main.temp}°C`;
+  description.innerText = data.weather[0].description;
   city.innerText = data.name;
 };
 
-// TODO: Create a function to get the weather info
 const fetchWeather = (location) => {
   // TODO: Replace the following line with the correct url
   const url = buildUrl(location);
@@ -36,8 +37,8 @@ const fetchWeather = (location) => {
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const location = document.getElementById("input").value;
-  console.log(location);
-  fetchWeather(location);
+  const city = input.value;
+  console.log(city);
+  // TODO: On submit, in the callback, call the getWeatherInfo function
+  fetchWeather(city);
 });
-// TODO: On submit, in the callback, call the getWeatherInfo function
