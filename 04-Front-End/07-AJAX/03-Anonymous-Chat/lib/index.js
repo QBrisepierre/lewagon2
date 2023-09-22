@@ -4,7 +4,7 @@ const baseUrl = "https://wagon-chat.herokuapp.com/";
 // Your turn to code!
 const url = `${baseUrl}${batch}/messages`;
 const refresh = document.getElementById("refresh");
-const send = document.querySelector(".btn-primary");
+const form = document.getElementById("comment-form");
 const lists = document.querySelector(".list-unstyled");
 const comment = document.getElementById("your-message");
 const name = document.getElementById("your-name");
@@ -36,7 +36,7 @@ const postNewMessage = (message, callback) => {
     });
 };
 
-send.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = { "author": name.value, "content": comment.value };
   postNewMessage(data, refreshMessages);
