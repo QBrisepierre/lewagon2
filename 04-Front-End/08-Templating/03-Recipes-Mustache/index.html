@@ -35,10 +35,29 @@
         <div class="row">
           <div class="col">
             <h1 class="mb-3 text-center">🧑‍🍳 Let's Cook</h1>
+            <div class="results"></div>
           </div>
         </div>
-
-        <div id="recipesContainer" class="row"></div>
+        <template id="recipesTemplate">
+          <div id="recipesContainer" class="row">
+            <div class="col col-lg-4">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h2>{{name}}</h2>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ingredients:</h5>
+                  <ul class="list-group">
+                    {{#ingredients}}
+                    <li class="list-group-item">{{.}}</li>
+                     {{/ingredients}}
+                  </ul>
+                  <h5 class="card-title mt-3">Difficulty: {{difficulty}}/10</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
       </div>
     </div>
     <!-- Import your own javascript -->

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import Mustache from "mustachejs";
 
 const recipes = [
@@ -21,6 +22,12 @@ const recipes = [
     ingredients: ["fish", "shellfish", "tomatoes", "fennel", "onions", "garlic", "saffron"],
     difficulty: 10
   }
-]
+];
 
 // TODO: Your code goes below:
+const template = document.getElementById("recipesTemplate").innerHTML;
+const results = document.querySelector(".results");
+recipes.forEach((recipe) => {
+  const output = Mustache.render(template, recipe);
+  results.insertAdjacentHTML("beforeend", output);
+});
