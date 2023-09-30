@@ -23,6 +23,12 @@
   <body>
     <div class="container p-5">
       <!-- TODO: Code here -->
+      <div data-controller="character-count">
+        <div class="input-group" data-action="keyup->character-count#count">
+          <textarea maxlength="140" class="form-control" aria-label="With textarea" placeholder="Type everything" data-character-count-target="text"></textarea>
+        </div>
+        <p data-character-count-target="counter"></p>
+      </div>
     </div>
 
     <script src="lib/index.js" type="module"></script>
