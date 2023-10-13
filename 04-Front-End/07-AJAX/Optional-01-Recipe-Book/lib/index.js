@@ -31,7 +31,6 @@ const insertRecipes = (recipe, container) => {
 const addRecipeToFavourites = (recipe) => {
   insertRecipes(recipe, favoriteList);
   localStorage.setItem("cards", favoriteList.innerHTML);
-  favoriteList.firstChild.nextSibling.innerHTML = "";
 };
 
 const displayRecipe = (ingredient) => {
@@ -65,3 +64,5 @@ const cards = localStorage.getItem("cards");
 if (cards !== null) {
   favoriteList.insertAdjacentHTML("beforeend", cards);
 }
+
+//localStorage.clear();
