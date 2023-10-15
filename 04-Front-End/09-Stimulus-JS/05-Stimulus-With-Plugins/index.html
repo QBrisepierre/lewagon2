@@ -15,7 +15,9 @@
     <script type="importmap">
       {
         "imports": {
-          "@hotwired/stimulus": "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+          "stimulus": "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js",
+          "chart.js" : "https://ga.jspm.io/npm:chart.js@4.2.0/dist/chart.js",
+          "@kurkle/color" : "https://ga.jspm.io/npm:@kurkle/color@0.3.2/dist/color.esm.js"
         }
       }
     </script>
@@ -28,7 +30,7 @@
       <div>
         <h2>Gender Ratio</h2>
         <div class="chart">
-          <canvas>
+          <canvas data-controller="doughnut-charts">
             <!-- TODO: Display doughnut chart below -->
           </canvas>
         </div>
@@ -37,7 +39,7 @@
       <div class="pt-5">
         <h2>World Population</h2>
         <div class="chart">
-          <canvas>
+          <canvas data-controller="world-population-growth">
             <!-- TODO: Display line chart below -->
           </canvas>
         </div>
@@ -46,7 +48,7 @@
       <div class="pt-5">
         <h2>Religious Communities</h2>
         <div class="chart">
-          <canvas>
+          <canvas data-controller="world-religions">
             <!-- TODO: Display polar area chart below -->
           </canvas>
         </div>
