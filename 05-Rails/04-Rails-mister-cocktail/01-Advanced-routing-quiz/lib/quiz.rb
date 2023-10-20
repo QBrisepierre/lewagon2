@@ -16,7 +16,7 @@ def restaurants_resources_routes
     get '/restaurants/new', to: 'restaurants#new'
     post '/restaurants', to: 'restaurants#create'
     get '/restaurants/:id/edit', to: 'restaurants#edit'
-    patch '/restaurants/:id', to: 'restaurants#update'
+    patch '/restaurants/:id ', to: 'restaurants#update'
     delete '/restaurants/:id', to: 'restaurants#destroy'
 
     # Add more routes here
